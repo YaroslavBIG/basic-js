@@ -1,24 +1,20 @@
 module.exports = function createDreamTeam(members) {
+  if (!Array.isArray(members)){
+    return false;
+  }
   if (members.length === 0) {
     throw Error;
   }
   const sortedArr = members.sort()
-  let result = ''.toUpperCase();
+  let result = '';
   for(const value of sortedArr) {
-    if (typeof value === String) {
-       if (value[0] !== '') {
-         result += value[0];
-       } 
-       else {
-         for (let count = 0; count < value.length; count += 1) {
-           if (value[count] !== '' && value[count -1] === '') {
-             result += value[count];
-             break;
-           }
-         }
-       }
+    if (typeof value === 'string') {
+      let noSpase = value.split(' ').join('');
+      result += noSpase[0];
       }
-      return result;
+      else {
+        continue;
+      } 
     }
-    console.log(result);
+    return result.toUpperCase().split('').sort().join('');
 };
