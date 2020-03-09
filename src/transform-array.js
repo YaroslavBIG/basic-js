@@ -21,30 +21,30 @@ module.exports = function transform(arr) {
                 indexControl = arr.indexOf(controlSw);
                 result.splice(indexControl, indexControl + 1);
                 // console.log(indexControl);
-                continue;
+                // continue;
             case '--discard-prev':
-                console.log('--discard-prev');
+                // console.log('--discard-prev');
                 controlSw = '--discard-prev';
                 indexControl = arr.indexOf(controlSw);
                 result = arr.splice(indexControl, indexControl - 1);
                 // console.log(indexControl);
-                continue;
+                // continue;
             case '--double-next':
                // console.log('--double-next')
                 controlSw = '--double-next';
                 indexControl = arr.indexOf(controlSw)
                 result[indexControl] = result[indexControl + 1];
                 // console.log(indexControl)
-                continue;
+                // continue;
             case '--double-prev':
                // console.log('--double-prev')
                 controlSw = '--double-prev';
                 result[indexControl] = result[indexControl - 1];
                 indexControl = arr.indexOf(controlSw)
                 // console.log(indexControl)
-                continue;
+                // continue;
             default:
-                continue;
+                break;
         }
     }
     

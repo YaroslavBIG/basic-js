@@ -5,6 +5,9 @@ module.exports = function getSeason(date) {
   if (!date instanceof Date) {
     throw new Error;
   };
+  if (Object.keys(date).length > 0) {
+    throw new Error();
+  }
 
   const month = date.getMonth();
   
